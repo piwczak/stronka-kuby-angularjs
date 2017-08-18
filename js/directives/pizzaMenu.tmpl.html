@@ -1,0 +1,54 @@
+<div id="pizzaMenu" class="container">
+    <div id="pizzaHeader" class="row sectionHeader">
+        <div class="col-sm-8 col-xs-6">
+            <h3>Pizza</h3>
+        </div>
+        <div class="col-sm-offset-1 col-sm-1 col-xs-2 pizza-badge">
+            <h4 class="size">32 cm</h4>
+        </div>
+        <div class="col-sm-1 col-xs-2 pizza-badge">
+            <h4 class="size">40 cm</h4>
+        </div>
+        <div class="col-sm-1 col-xs-2 pizza-badge">
+            <h4 class="size">50 cm</h4>
+        </div>
+    </div>
+
+    <div id="pizzaBody">
+        <div class="pizza row" ng-repeat="pizza in listOfPizza track by $index">
+            <div class="col-sm-8 col-xs-6">
+                <h4>{{pizza.Name}}</h4>
+                <p>{{pizza.Desc}}</p>
+            </div>
+            <div class="col-sm-offset-1 col-sm-1 col-xs-2 pizza-price">
+                {{pizza.SmallPrice | currency:'':2 | currencyComma}}
+            </div>
+            <div class="col-sm-1 col-xs-2 pizza-price">
+                {{pizza.MediumPrice | currency:'':2 | currencyComma}}
+            </div>
+            <div class="col-sm-1 col-xs-2 pizza-price">
+                {{pizza.LargePrice | currency:'':2 | currencyComma}}
+            </div>
+        </div>
+    </div>
+
+    <div id="pizzaFooter">
+        <div class="row sectionHeader">
+            <h3>Dodatki</h3>
+        </div>
+        <div class="pizzaExtras row" ng-repeat="add in listOfAdds track by $index">
+            <div class="col-sm-8 col-xs-6">
+                <h4>{{add.Name}}</h4>
+            </div>
+            <div class="col-sm-offset-1 col-sm-1 col-xs-2 pizza-price">
+                {{add.SmallPrice | currency:'':2 | currencyComma}}
+            </div>
+            <div class="col-sm-1 col-xs-2 pizza-price">
+                {{add.MediumPrice | currency:'':2 | currencyComma}}
+            </div>
+            <div class="col-sm-1 col-xs-2 pizza-price">
+                {{add.LargePrice | currency:'':2 | currencyComma}}
+            </div>
+        </div>
+    </div>
+</div>
