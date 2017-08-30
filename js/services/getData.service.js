@@ -1,6 +1,6 @@
 'use strict';
 
-pizzaApp.factory('getData', function($http, $log) {
+pizzaApp.factory('getData',['$http', '$log', function($http, $log) {
     return {
         getJsonData: function(file, successFun) {
             var url = 'files/' + file + '.json';
@@ -11,4 +11,4 @@ pizzaApp.factory('getData', function($http, $log) {
             });
         }
     }
-});
+}]);

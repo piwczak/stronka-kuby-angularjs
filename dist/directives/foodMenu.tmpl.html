@@ -1,0 +1,17 @@
+<div id="foodMenu" class="container">
+    <div id="foodHeader" class="row sectionHeader">
+        <h3>Jedzonko</h3>
+    </div>
+
+    <div class="foodBody">
+        <div class="food row" ng-repeat="food in listOfFood track by $index">
+            <div class="col-sm-8 col-xs-8">
+                <h4>{{food.Name}}</h4>
+                <p>{{food.Desc}}</p>
+            </div>
+            <div class="col-sm-offset-1 col-sm-3 food-price">
+                {{food.Price | currency:'':2 | currencyComma}}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,1 @@
+"use strict";pizzaApp.factory("getData",["$http","$log",function(t,n){return{getJsonData:function(a,o){var e="files/"+a+".json";t.get(e).then(function(t,n,a,e){o(t)},function(t,a,o,e){n.warn(t,a,o,e)})}}}]);

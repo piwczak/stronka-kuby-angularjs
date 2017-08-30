@@ -1,0 +1,1 @@
+"use strict";pizzaApp.directive("carousel",function(){return{restrict:"E",templateUrl:"/dist/directives/carousel.tmpl.html",scope:!1,link:function(e,t,i,r){t.find("#theCarousel").carousel()}}});

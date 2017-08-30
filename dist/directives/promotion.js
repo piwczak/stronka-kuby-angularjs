@@ -1,0 +1,1 @@
+"use strict";pizzaApp.directive("promotion",function(){return{restrict:"E",templateUrl:"/dist/directives/promotion.tmpl.html",scope:!1}});
