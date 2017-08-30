@@ -4,9 +4,8 @@ pizzaApp.directive('dishMenu', function () {
     return {
         restrict: 'E',
         templateUrl: "/js/directives/dishMenu.tmpl.html",
-        scope: {
-        },
-        controller: function ($scope, getData) {
+        scope: false,
+        controller: ['$scope', 'getData', function ($scope, getData) {
             getData.getJsonData('zestawy', function (data) {
                 $scope.listOfDishes = data.data;
                 angular.forEach($scope.listOfDishes, function(element) {
@@ -14,6 +13,6 @@ pizzaApp.directive('dishMenu', function () {
                      element.numOfProp = numOfProp;
                 });
             });
-        }
+        }]
     }
 });

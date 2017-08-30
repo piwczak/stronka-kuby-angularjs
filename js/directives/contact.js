@@ -4,9 +4,8 @@ pizzaApp.directive('contact', function () {
     return {
         restrict: 'E',
         templateUrl: "/js/directives/contact.tmpl.html",
-        scope: {
-        },
-        controller: function($scope, $timeout){
+        scope: false,
+        controller: ['$scope', '$timeout', function($scope, $timeout){
             this.initMap = function () {
                 var latLang = { lat: 50.175347, lng: 20.236888 }
                 var mapSettings = {
@@ -48,7 +47,7 @@ pizzaApp.directive('contact', function () {
                     radius: 7500
                 });
             };
-        },
+        }],
         link: function(scope, element, attr, controller) {
             controller.initMap();
         }

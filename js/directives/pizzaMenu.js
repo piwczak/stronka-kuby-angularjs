@@ -4,9 +4,8 @@ pizzaApp.directive('pizzaMenu', function() {
     return {
         restrict: 'E',
         templateUrl: "/js/directives/pizzaMenu.tmpl.html",
-        scope: {
-        },
-        controller: function($scope, getData) {
+        scope: false,
+        controller: ['$scope', 'getData', function($scope, getData) {
             getData.getJsonData('pizza', function(data) {
                $scope.listOfPizza = data.data;
             });
@@ -14,6 +13,6 @@ pizzaApp.directive('pizzaMenu', function() {
              getData.getJsonData('dodatki', function(data) {
                $scope.listOfAdds = data.data;
             });
-        }
+        }]
     }
 });

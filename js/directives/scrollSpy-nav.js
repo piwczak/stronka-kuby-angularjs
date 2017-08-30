@@ -1,6 +1,6 @@
 'use strict';
 
-pizzaApp.directive('scrollSpyNav', function ($window, $document, $timeout, $q) {
+pizzaApp.directive('scrollSpyNav', ['$window', '$document', '$timeout', '$q', function ($window, $document, $timeout, $q) {
     return {
         restrict: 'A',
         link: function (scope, element) {
@@ -22,4 +22,4 @@ pizzaApp.directive('scrollSpyNav', function ($window, $document, $timeout, $q) {
             });
         }
     }
-});
+}]);

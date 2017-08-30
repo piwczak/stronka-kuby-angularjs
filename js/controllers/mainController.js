@@ -1,6 +1,6 @@
 'use strict';
 
-pizzaApp.controller('MainController', function ($scope, $window, $document) {
+pizzaApp.controller('MainController', ['$scope', '$window', '$document', function ($scope, $window, $document) {
     var vm = this;
 
     var windowWidth = angular.element($window).width();
@@ -20,4 +20,4 @@ pizzaApp.controller('MainController', function ($scope, $window, $document) {
         offset: offset
     });
 
-});
+}]);

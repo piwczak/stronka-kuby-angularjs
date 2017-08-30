@@ -1,2 +1,3 @@
 # Build folder and log file
 node_modules
+typings.json
