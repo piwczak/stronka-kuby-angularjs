@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var uglify = require('gulp-uglify');
-var replace = require('gulp-replace');
 var useref = require('gulp-useref');
 var gulpIf = require('gulp-if');
 
