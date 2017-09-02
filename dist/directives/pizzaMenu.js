@@ -1,1 +1,0 @@
-"use strict";pizzaApp.directive("pizzaMenu",function(){return{restrict:"E",templateUrl:"/dist/directives/pizzaMenu.tmpl.html",scope:!1,controller:["$scope","getData",function(t,i){i.getJsonData("pizza",function(i){t.listOfPizza=i.data}),i.getJsonData("dodatki",function(i){t.listOfAdds=i.data})}]}});

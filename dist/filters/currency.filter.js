@@ -1,1 +1,0 @@
-"use strict";pizzaApp.filter("currencyComma",function(){return function(r){return r.toString().replace(".",",")}});

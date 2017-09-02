@@ -1,1 +1,0 @@
-"use strict";pizzaApp.controller("MainController",["$scope","$window","$document",function(e,n,t){var o=angular.element(n).width(),r=0;r=o<=360?170:o>360&&o<=768?145:125,angular.element("body").scrollspy({target:".navbar",offset:r})}]);
