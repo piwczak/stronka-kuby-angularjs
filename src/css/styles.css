@@ -188,9 +188,8 @@ div[class*="-price"]:hover {
 }
 
 #introduction .lead {
-    font-size: 1.6em;
+    font-size: 1.5em;
 }
-
 
 #introduction div ul {
     font-size: 1.1em;
@@ -220,17 +219,11 @@ div[class*="-price"]:hover {
    border-radius: 10px;
 }
 
-/*#pizzaHeader, #foodHeader, #dishHeader, #promotionHeader {
-   border-radius: 10px 10px 0 0;
-}*/
-
 .sectionHeader {
    background-color: #600;
    border-radius: 10px 10px 0 0;
 }
 
-
-/*#pizzaHeader h3, #dishHeader h3, #foodHeader h3, #addsHeader{*/
 .sectionHeader h3{ 
    margin-top: 5px;
    margin-bottom: 5px;
@@ -303,7 +296,7 @@ div[class*="-price"]:hover {
 .promotionBody  div[class*="promotion"] em {
     position: absolute;
     top: 20%;
-    left: 40%;
+    left: 45%;
 }
 
 .underline {
