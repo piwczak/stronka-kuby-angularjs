@@ -3,7 +3,7 @@
 pizzaApp.directive('navigation', ['$window', '$document', '$timeout', '$q', function ($window, $document, $timeout, $q) {
     return {
         restrict: 'E',
-        templateUrl: "/js/directives/navigation.tmpl.html",
+        templateUrl: "./js/directives/navigation.tmpl.html",
         scope: false,
         link: function (scope, element, attr, controller) {
             var headerOffset = 300;

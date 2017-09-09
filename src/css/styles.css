@@ -183,6 +183,27 @@ div[class*="-price"]:hover {
    margin-top: 40px;
 }
 
+#introduction div {
+    border-radius: 6px;
+}
+
+#introduction .lead {
+    font-size: 1.6em;
+}
+
+
+#introduction div ul {
+    font-size: 1.1em;
+}
+
+#introduction div ul li {
+    margin-bottom: 5px;
+}
+
+#introduction div ul li:last-child {
+    margin-bottom: 0;
+}
+
 @media(min-width: 960px) {
    #introduction {
    margin-top: 0;

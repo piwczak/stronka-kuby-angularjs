@@ -3,7 +3,7 @@
 pizzaApp.directive('pizzaMenu', function() {
     return {
         restrict: 'E',
-        templateUrl: "/js/directives/pizzaMenu.tmpl.html",
+        templateUrl: "./js/directives/pizzaMenu.tmpl.html",
         scope: false,
         controller: ['$scope', 'getData', function($scope, getData) {
             getData.getJsonData('pizza', function(data) {
