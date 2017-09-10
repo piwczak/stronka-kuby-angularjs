@@ -6,14 +6,16 @@ var cleanCSS = require('gulp-clean-css');
 var runSequence = require('run-sequence');
 var del = require('del');
 var replaceName = require('gulp-replace-name');
+var replace = require('gulp-replace');
 
 gulp.task('uglify-concat-js', function() {
-    var src = 'src/js/**/*.js';
     var dist = 'dist';
 
     return gulp.src('src/index.html')
     .pipe(useref())
     .pipe(gulpIf('*.js', uglify()))
+    .pipe(gulpIf('index.html', replace(/(\.\/css\/.*)(.css)/g, '$1.min$2')))
+    .pipe(gulpIf('index.html', replace(/(\.\/lib\/.*)(.js)/g, '$1.min$2')))
     .pipe(gulp.dest(dist));
 });
 
@@ -39,10 +41,15 @@ gulp.task('uglify-css', function() {
     .pipe(gulp.dest(dist));
 });
 
-gulp.task('delete-styles.css', function() {
-    del(['dist/css/styles.css', 'dist/css/bootstrap.css', 'dist/css/fontello.css']);
+gulp.task('delete-dev-css-js', function() {
+    del(['dist/css/*.css', '!dist/css/*.min.css']);
+    del(['dist/lib/*.js', '!dist/lib/*.min.js'])
+});
+
+gulp.task('clear-dist', function() {
+    del(['dist/**', '!dist'])
 });
 
 gulp.task('prod-mode', function(callback){
-    runSequence(['uglify-concat-js', 'copy-html-temps', 'copy-others'], 'uglify-css', 'delete-styles.css', callback);
+    runSequence('clear-dist', ['uglify-concat-js', 'copy-html-temps', 'copy-others'], 'uglify-css', 'delete-dev-css-js', callback);
 });
