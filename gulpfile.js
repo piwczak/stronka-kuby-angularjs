@@ -7,24 +7,20 @@ var runSequence = require('run-sequence');
 var del = require('del');
 var replaceName = require('gulp-replace-name');
 var replace = require('gulp-replace');
+var embedTemplates = require('gulp-angular-embed-templates');
 
 gulp.task('uglify-concat-js', function() {
     var dist = 'dist';
 
     return gulp.src('src/index.html')
     .pipe(useref())
+    .pipe(gulpIf('*.js', replace(/(\/js\/)/g, '')))
+    .pipe(gulpIf('*.js', embedTemplates()))
     .pipe(gulpIf('*.js', uglify()))
     .pipe(gulpIf('index.html', replace(/(\.\/css\/.*)(.css)/g, '$1.min$2')))
     .pipe(gulpIf('index.html', replace(/(\.\/lib\/.*)(.js)/g, '$1.min$2')))
     .pipe(gulp.dest(dist));
-});
-
-gulp.task('copy-html-temps', function() {
-    var src = 'src/js/**/*.html';
-    var dist = 'dist/js';
-
-    return gulp.src(src)
-    .pipe(gulp.dest(dist));
+    
 });
 
 gulp.task('copy-others', function() {
@@ -51,5 +47,5 @@ gulp.task('clear-dist', function() {
 });
 
 gulp.task('prod-mode', function(callback){
-    runSequence('clear-dist', ['uglify-concat-js', 'copy-html-temps', 'copy-others'], 'uglify-css', 'delete-dev-css-js', callback);
+    runSequence('clear-dist', 'uglify-concat-js', 'copy-others', 'uglify-css', 'delete-dev-css-js', callback);
 });

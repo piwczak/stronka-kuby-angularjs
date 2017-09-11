@@ -27,6 +27,7 @@
     "@types/angular": "~1.6.29",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
+    "gulp-angular-embed-templates": "^2.3.0",
     "gulp-clean-css": "^3.8.0",
     "gulp-if": "^2.0.2",
     "gulp-replace": "^0.6.1",

@@ -3,7 +3,7 @@
 pizzaApp.directive('contact', function () {
     return {
         restrict: 'E',
-        templateUrl: "./js/directives/contact.tmpl.html",
+        templateUrl: "/js/directives/contact.tmpl.html",
         scope: false,
         controller: ['$scope', '$timeout', function($scope, $timeout){
             this.initMap = function () {
